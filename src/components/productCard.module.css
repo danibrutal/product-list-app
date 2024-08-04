@@ -1,0 +1,9 @@
+.product-card {
+  border-radius: 16px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.product-card__product-name {
+  font-weight: bold;
+}
