@@ -1,12 +1,15 @@
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
   list-style: none;
   width: 100%;
   flex:1;
 }
 
 .product-list-item {
+  transition: transform 0.3s;
   display: contents;
+  min-height: 300px; /* Set a minimum height */
 }

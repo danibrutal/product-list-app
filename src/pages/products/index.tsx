@@ -8,6 +8,7 @@ export default function ProductsPage({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <main className={styles.main}>
+      <h2>Maak kennis met onze nieuwste producten</h2>
       <ProductList products={products} />
     </main>
   );

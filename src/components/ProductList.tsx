@@ -13,7 +13,11 @@ export const ProductList = ({ products }: ProductListProps) => {
           key={product.productGroupId}
           className={styles["product-list-item"]}
         >
-          <ProductCard displayName={product.fmyMarketingName} />
+          <ProductCard
+            displayName={product.fmyMarketingName}
+            thumbUrl={product.modelList[0].thumbUrl}
+            thumbUrlAlt={product.modelList[0].thumbUrlAlt}
+          />
         </li>
       ))}
     </ul>
