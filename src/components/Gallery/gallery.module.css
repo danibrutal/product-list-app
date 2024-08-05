@@ -1,0 +1,22 @@
+.gallery-figure {
+  max-width: 768px;
+  text-align: center;
+}
+
+.gallery-figure img {
+  max-width: 100%;
+}
+
+.gallery-figure figcaption {
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+  justify-content: center;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .gallery-figure figcaption {
+    display: none;
+  }
+}

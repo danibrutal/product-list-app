@@ -2,7 +2,8 @@ import { ApiProduct } from "@/types/types";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
-  products: ApiProduct[];
+  product?: ApiProduct;
+  products?: ApiProduct[];
 };
 
 const API_ENDPOINT =

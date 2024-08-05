@@ -1,0 +1,20 @@
+.product-stock-status {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.product-stock-status__pill {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.product-stock-status__pill--inStock {
+  background-color: green;
+}
+
+
+.product-stock-status__pill--outOfStock {
+  background-color: red;
+}
