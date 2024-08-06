@@ -1,0 +1,10 @@
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.product-details__price {
+  font-weight: 700;
+  font-size: 20px;
+}

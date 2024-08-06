@@ -16,6 +16,8 @@ export interface Model {
   reviewCount: string;
   priceDisplay: string;
   ctaType: StockStatus;
+  stockStatusText: string;
+  fmyChipList: FmiChipOption[];
 }
 
 export interface ProductColor {
@@ -28,8 +30,14 @@ export interface Option {
 }
 
 export interface ChipOption {
-  fmyChipType: "COLOR" | "MOBILE MEMORY";
+  fmyChipType: FmyChipType;
   optionList: Option[];
+}
+
+export interface FmiChipOption {
+  fmyChipType: FmyChipType;
+  fmyChipCode: string;
+  fmyChipName: string;
 }
 
 export interface GalleryImage {
@@ -38,3 +46,4 @@ export interface GalleryImage {
 }
 
 export type StockStatus = "inStock" | "learnMore" | "outOfStock";
+export type FmyChipType = "COLOR" | "MOBILE MEMORY"; // probably more options

@@ -1,45 +1,26 @@
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import styles from "./products.module.css";
 
-import { ApiProduct, GalleryImage, ProductColor } from "@/types/types";
-import { getProductColorVariants, getProductGalleryImage } from "@/utils";
-import { ColorSelector } from "@/components/ColorSelector";
-import { useState } from "react";
+import { ApiProduct } from "@/types/types";
 import { Gallery } from "@/components/Gallery";
-import { ProductStockStatus } from "@/components/ProductStockStatus";
+import { ProductProvider } from "@/providers/ProductProvider";
+import { ProductDetails } from "@/components/ProductDetails";
 
 interface ProductPageProps {
   product: ApiProduct;
 }
 
 export default function ProductPage({ product }: ProductPageProps) {
-  const [selectedColor, setSelectedColor] = useState<string>("");
-  const [selectedImage, setSelectedImage] = useState<GalleryImage>(
-    getProductGalleryImage(product)
-  );
-
-  const colorVariants = getProductColorVariants(product);
-
-  const handleOnSelectColor = (color: ProductColor) => {
-    console.log(color);
-  };
-
   return (
-    <main className={styles.main}>
-      <h1>{product.fmyMarketingName}</h1>
-      <section className={styles["gallery-section"]}>
-        <Gallery
-          galleryImageLarge={selectedImage.imageUrl}
-          galleryImageAlt={selectedImage.alt}
-        />
-        <div>
-          <ColorSelector
-            colors={colorVariants}
-            onColorSelect={handleOnSelectColor}
-          />
-        </div>
-      </section>
-    </main>
+    <ProductProvider product={product}>
+      <main className={styles.main}>
+        <h1>{product.fmyMarketingName}</h1>
+        <section className={styles["gallery-section"]}>
+          <Gallery />
+          <ProductDetails product={product} />
+        </section>
+      </main>
+    </ProductProvider>
   );
 }
 

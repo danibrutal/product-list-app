@@ -1,20 +1,25 @@
-import { ProductColor } from "@/types/types";
+import { ApiProduct, ProductColor } from "@/types/types";
 import { ColorSelector } from "../ColorSelector";
+import { useModel } from "@/providers/ProductProvider";
+import styles from "./productDetails.module.css";
 
 interface ProductDetailsProps {
-  colorVariants: ProductColor[];
-  onColorSelect: (color: ProductColor) => void;
+  product: ApiProduct;
 }
 
-export const ProductDetails = ({
-  colorVariants,
-  onColorSelect,
-}: ProductDetailsProps) => {
+export const ProductDetails = ({ product }: ProductDetailsProps) => {
+  const { currentModel, colorVariants, selectModelByColor } = useModel();
+
   return (
-    <div>
+    <div className={styles["product-details"]}>
+      {currentModel?.priceDisplay && (
+        <div className={styles["product-details__price"]}>
+          Total: {currentModel?.priceDisplay}
+        </div>
+      )}
       <ColorSelector
         colors={colorVariants}
-        onColorSelect={handleOnSelectColor}
+        onColorSelect={selectModelByColor}
       />
     </div>
   );

@@ -7,7 +7,7 @@ export default function ProductsPage({
   products,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <main className={styles.main}>
+    <main className={styles["main-plp"]}>
       <h2>Maak kennis met onze nieuwste producten</h2>
       <ProductList products={products} />
     </main>

@@ -18,3 +18,7 @@
 .product-stock-status__pill--outOfStock {
   background-color: red;
 }
+
+.product-stock-status__pill--learnMore {
+  background-color: orange;
+}
