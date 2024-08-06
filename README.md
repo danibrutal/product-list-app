@@ -2,35 +2,34 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Gallery page
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000/products](http://localhost:3000/products) with your browser to see the gallery page.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Explanation
 
-## Learn More
+- I've used next.js to assemble the basics of the app.
+- There are 2 pages in `src/pages`: `index.tsx` (PLP), and `[...slug].tsx` (PDP)
+- While the PLP page is a basic grid, in the PDP page I had to handle state changes via `src/providers/ProductProvider.tsx`, which exposes interesting data and actions for other components to consume.
+- I created a set of components for the app under `src/components`.
+- Created an endpoing in `src/pages/api/products.ts` that consumes the API provided by the document.
+- I only implemented a color selector due to time constraints
 
-To learn more about Next.js, take a look at the following resources:
+## Improvements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- For sure, handling of the images could be better for a production app
+- Error handling and tests
+- Implementation of other variants, such as Memory selector, and TV sizes
+- Design, in general
